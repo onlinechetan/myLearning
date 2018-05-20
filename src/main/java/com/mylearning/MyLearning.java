@@ -11,12 +11,12 @@ public class MyLearning {
      * @param args
      */
     public static void main (String[] args) {
-        listPreJava8();
+        /**listPreJava8();
         listJava8();
         //should take ~10 sec to run
         stream();
         //runs paralleling and takes lesser time
-        parallelstream();
+         parallelstream();*/
         //impure function
         impureFunction();
     }
@@ -28,7 +28,6 @@ public class MyLearning {
         int[] factor = new int[] { 2 };
         Stream<Integer> stream = numbers.stream()
                 .map(e -> e * factor[0]);
-
         stream.forEach(System.out::println);
         factor[0] = 0;
 
