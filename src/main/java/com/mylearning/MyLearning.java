@@ -28,14 +28,13 @@ public class MyLearning {
         int[] factor = new int[] { 2 };
         Stream<Integer> stream = numbers.stream()
                 .map(e -> e * factor[0]);
-        stream.forEach(System.out::println);
         factor[0] = 0;
-
+        //when the lazy initialization occur during foreach, factor[0] is 0 and not 2 and hence output will be 0,0,0
+        //i.e if numbers or factor is shared, there will be problem due to shared mutability. use isolated mutation.
         stream.forEach(System.out::println);
     }
 
     private static void listJava8() {
-
         List<Integer> numbers = Arrays.asList(2, 5, 8, 15, 12, 19, 50, 23);
         
         String s =
@@ -43,7 +42,6 @@ public class MyLearning {
                         .peek(e-> print2(e))
                         .filter(e -> e > 10)
                         .filter(e -> e % 2 == 0)
-                        .peek(e-> print2(e))
                         .map(e -> e * 2)
                         .findFirst()
                         .map(e -> "The value is " + e)
