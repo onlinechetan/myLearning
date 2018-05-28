@@ -5,7 +5,7 @@ package com.mylearning;
  */
 public class EqualsAndEqualEqual {
     static String str1 = "one";
-    static String first = "one";
+    static String first = "one"; 
 
     public static void main(String[] args) {
         System.out.println("using == operator " + (str1 == first));  //== is operator. Will return false
